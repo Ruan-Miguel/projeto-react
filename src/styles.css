@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #container {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+    background-color: #8BC34A;
+    color: #F5F5F5;
+}
+
+#subcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93%;
+}
