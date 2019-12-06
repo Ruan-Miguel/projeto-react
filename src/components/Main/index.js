@@ -7,7 +7,7 @@ export default class Main extends Component {
         super(props)
 
         this.state = {
-            cor: 'snow',
+            cor: 'blueviolet',
             count: 0,
             limit: 10
         }
@@ -29,12 +29,14 @@ export default class Main extends Component {
 
     render () {
         return (
-            <div id="main">
-                <label>Escolha uma cor:</label>
+            <div style={{backgroundColor: this.state.cor}} id="main">
+                <div id="inputDiv">
+                    <label>Escolha uma cor para esse bloco:</label>
+                    <br/>
+                    <input type="text" value={this.state.cor} onChange={this.handleChange} />
+                </div>
                 <br/>
-                <input type="text" value={this.state.cor} onChange={this.handleChange} />
-                <br/>
-                <button>Aplicar</button>
+                <button className="btnAplicar">Aplicar</button>
             </div>
         )
     }

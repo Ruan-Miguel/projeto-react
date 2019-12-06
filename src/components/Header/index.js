@@ -4,7 +4,7 @@ import './styles.css'
 
 const Header = () => (
     <header>
-        <h1>Calculadora</h1>
+        <h1>Jogo de cores</h1>
     </header>
 )
 
