@@ -15,6 +15,12 @@ export default class Main extends Component {
                     nome='Caixa de seleção'
                     corReal={this.props.cor}
                     changeColor={this.props.caixa.handleClick} />
+                
+                <OpcaoCor
+                    nome='Corpo'
+                    corReal={this.props.corpo.corReal}
+                    changeColor={this.props.corpo.handleClick} />
+
                 <OpcaoCor
                     nome='Menu'
                     corReal={this.props.header.corReal}

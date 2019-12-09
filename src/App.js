@@ -12,18 +12,25 @@ export default class App extends Component {
         this.state = {
             corRealCaixa: '#1976D2',
             corRealHeader: '#76b927',
+            corRealCorpo: '#fffafa'
         }
     }
 
     handleClickCaixa = (cor) => {
         this.setState({
-            corRealCaixa: cor,
+            corRealCaixa: cor
         })
     }
 
     handleClickHeader = (cor) => {
         this.setState({
-            corRealHeader: cor,
+            corRealHeader: cor
+        })
+    }
+
+    handleClickCorpo = (cor) => {
+        this.setState({
+            corRealCorpo: cor
         })
     }
 
@@ -31,8 +38,14 @@ export default class App extends Component {
         return (
             <div id="container">
                 <Header corReal={this.state.corRealHeader} />
-                <div id="subcontainer">
+                <div style={{backgroundColor: this.state.corRealCorpo}} id="subcontainer">
                     <Main cor={this.state.corRealCaixa}
+
+                        corpo={{
+                            corReal: this.state.corRealCorpo,
+                            handleClick: this.handleClickCorpo
+                        }}
+
                         caixa={{
                             handleClick: this.handleClickCaixa
                         }}
