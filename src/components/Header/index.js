@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 import './styles.css'
 
-const Header = () => (
-    <header>
-        <h1>Jogo de cores</h1>
-    </header>
-)
-
-export default Header
+export default class Header extends Component {
+    render () {
+        return (
+            <header style={{backgroundColor: this.props.corReal}}>
+                <h1>Jogo de cores</h1>
+            </header>
+        )
+    }
+}
