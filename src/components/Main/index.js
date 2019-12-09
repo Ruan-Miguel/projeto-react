@@ -12,10 +12,13 @@ export default class Main extends Component {
         return (
             <div id="main" style={{backgroundColor: this.props.cor}}>
                 <OpcaoCor
-                    nome='caixa de seleção'
-                    corInformada={this.props.caixa.corInformada}
-                    handleChange={this.props.caixa.handleChange}
+                    nome='Caixa de seleção'
+                    corReal={this.props.cor}
                     changeColor={this.props.caixa.handleClick} />
+                <OpcaoCor
+                    nome='Menu'
+                    corReal={this.props.header.corReal}
+                    changeColor={this.props.header.handleClick} />
             </div>
         )
     }

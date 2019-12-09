@@ -4,17 +4,49 @@ import './styles.css'
 
 export default class Main extends Component {
     //clearInterval(refreshIntervalId)
+    constructor (props) {
+        super(props)
+
+        this.state = {
+            corInformada: ''
+        }
+    }
+
+    componentDidMount () {
+        this.setState({
+            corInformada: this.props.corReal
+        })
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            corInformada: event.target.value
+        })
+    }
+
+    handleClick = () => {
+        let cor = this.state.corInformada.toLocaleLowerCase()
+        if (cor.length === 7 && cor.charAt(0) === '#') {
+            let validade = cor.slice(1).split('').every((char) => {
+                return (char >= 'a' && char <= 'f') || (char >= '0' && char <= '9')
+            })
+
+            if (validade) {
+                this.props.changeColor(this.state.corInformada)
+            }
+        }
+    }
 
     render () {
         return (
             <div className="divEscolha">
                 <div className="inputDiv">
-                    <label>Escolha uma cor para a {this.props.nome}:</label>
+                    <label>{this.props.nome}:</label>
                     <br/>
-                    <input type="text" value={this.props.corInformada} onChange={this.props.handleChange} />
+                    <input type="text" value={this.state.corInformada} onChange={this.handleChange} />
                 </div>
                 <br/>
-                <div className="btnAplicar" onClick={this.props.changeColor}>Aplicar</div>
+                <div className="btnAplicar" onClick={this.handleClick}>Aplicar</div>
             </div>
         )
     }

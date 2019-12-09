@@ -11,38 +11,20 @@ export default class App extends Component {
 
         this.state = {
             corRealCaixa: '#1976D2',
-            corInformadaCaixa: '',
             corRealHeader: '#76b927',
-            corInformadaHeader: ''
         }
     }
 
-    componentDidMount () {
+    handleClickCaixa = (cor) => {
         this.setState({
-            corInformadaCaixa: this.state.corRealCaixa,
+            corRealCaixa: cor,
         })
     }
 
-    handleChangeCaixa = (event) => {
+    handleClickHeader = (cor) => {
         this.setState({
-            corInformadaCaixa: event.target.value
+            corRealHeader: cor,
         })
-    }
-
-    handleClickCaixa = () => {
-        let cor = this.state.corInformadaCaixa
-        cor = cor.toLocaleLowerCase()
-        if (cor.length === 7 && cor.charAt(0) === '#') {
-            let validade = cor.slice(1).split('').every((char) => {
-                return (char >= 'a' && char <= 'f') || (char >= '0' && char <= '9')
-            })
-
-            if (validade) {
-                this.setState({
-                    corRealCaixa: this.state.corInformadaCaixa,
-                })
-            }
-        }
     }
 
     render () {
@@ -51,15 +33,14 @@ export default class App extends Component {
                 <Header corReal={this.state.corRealHeader} />
                 <div id="subcontainer">
                     <Main cor={this.state.corRealCaixa}
-                    caixa={{
-                        corInformada: this.state.corInformadaCaixa,
-                        handleChange: this.handleChangeCaixa,
-                        handleClick: this.handleClickCaixa
-                    }}
-                    
-                    header={{
-                        corInformada: this
-                    }} />
+                        caixa={{
+                            handleClick: this.handleClickCaixa
+                        }}
+                        
+                        header={{
+                            corReal: this.state.corRealHeader,
+                            handleClick: this.handleClickHeader
+                        }} />
                 </div>
             </div> 
         )
