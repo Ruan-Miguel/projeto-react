@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import './styles.css'
 
 export default class Main extends Component {
-    //clearInterval(refreshIntervalId)
     constructor (props) {
         super(props)
 
@@ -16,6 +15,14 @@ export default class Main extends Component {
         this.setState({
             corInformada: this.props.corReal
         })
+    }
+
+    componentDidUpdate (prevProps) {
+        if (prevProps !== this.props) {
+            this.setState({
+                corInformada: this.props.corReal
+            })
+        }
     }
 
     handleChange = (event) => {
@@ -39,7 +46,7 @@ export default class Main extends Component {
 
     render () {
         return (
-            <div className="divEscolha">
+            <div className="divEscolha" style={{backgroundColor: this.props.cor}} onDoubleClick={this.props.focoNaCaixa}>
                 <div className="inputDiv">
                     <label>{this.props.nome}:</label>
                     <br/>
