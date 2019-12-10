@@ -46,7 +46,7 @@ export default class Main extends Component {
 
     render () {
         return (
-            <div className="divEscolha" style={{backgroundColor: this.props.cor}} onDoubleClick={this.props.focoNaCaixa}>
+            <div className="divEscolha">
                 <div className="inputDiv">
                     <label>{this.props.nome}:</label>
                     <br/>

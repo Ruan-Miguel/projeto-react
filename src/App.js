@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import './styles.css'
 
-import Header from './components/Header'
 import Main from './components/Main'
 import OpcaoCor from './components/OpcaoCor'
 
@@ -73,21 +72,34 @@ export default class App extends Component {
     render () {
         return (
             <div id="container">
-                <Header cor={this.state.corRealHeader} handleClick={this.handleClickHeader} />
-                <Main focoNoCorpo={this.handleClickCorpo}
-                        focoNaCaixa={this.handleClickCaixa}
-
-                        cor={this.state.corRealCorpo}
-                        corCaixa={this.state.corRealCaixa}
-
-                        hexa={this.state.ComponenteFocado.cor}
-                        handleClick={this.state.ComponenteFocado.alteraCor}/>
-                    <OpcaoCor
-                        cor={this.state.corRealCaixa}
-                        focoNaCaixa={this.handleClickCaixa}
-                        nome='Caixa de seleção'
-                        corReal={this.state.ComponenteFocado.cor}
-                        changeColor={this.state.ComponenteFocado.alteraCor} />
+                <Main focoNoCorpo={this.handleClickHeader}
+                    texto='Header'
+                    settings={{
+                        backgroundColor: this.state.corRealHeader,
+                        height: '10%',
+                        width:'100%',
+                        top: '0%',
+                        zIndex: '1'
+                    }} />
+                <Main settings={{
+                        backgroundColor: this.state.corRealCorpo,
+                        height: '90%',
+                        width:'100%',
+                        top: '10%'
+                    }}
+                    focoNoCorpo={this.handleClickCorpo} />
+                <Main settings={{
+                        backgroundColor: this.state.corRealCaixa,
+                        height: '30%',
+                        width:'30%',
+                        top: '35%',
+                        left: '35%'
+                    }}
+                    focoNoCorpo={this.handleClickCaixa} />
+                <OpcaoCor
+                    nome='Caixa de seleção'
+                    corReal={this.state.ComponenteFocado.cor}
+                    changeColor={this.state.ComponenteFocado.alteraCor} />
             </div> 
         )
     }

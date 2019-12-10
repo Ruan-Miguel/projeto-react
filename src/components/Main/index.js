@@ -8,7 +8,9 @@ export default class Main extends Component {
 
     render () {
         return (
-            <div id="main" style={{backgroundColor: this.props.cor}} onClick={this.props.focoNoCorpo}>
+            <div id="main" style={this.props.settings}
+                onClick={this.props.focoNoCorpo}>
+                {this.props.texto}
             </div>
         )
     }
