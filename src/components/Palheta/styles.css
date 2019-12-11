@@ -1,0 +1,11 @@
+.palheta {
+    box-shadow: 0 0 3px black;
+    height: 30%;
+    width: 20%;
+    display: flex;
+    flex-flow: wrap;
+    align-self: flex-start;
+    margin-left: 8%;
+    z-index: 1;
+    overflow: auto;
+}

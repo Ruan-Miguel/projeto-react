@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import './styles.css'
 
-import Main from './components/Main'
+import Palheta from './components/Palheta'
 import OpcaoCor from './components/OpcaoCor'
 
 export default class App extends Component {
@@ -12,7 +12,7 @@ export default class App extends Component {
         this.state = {
             corRealCaixa: '#1976D2',
             corRealHeader: '#76b927',
-            corRealCorpo: '#EC407A',
+            corRealCorpo: 'CDDC39',
             ComponenteFocado: {
                 cor: '',
                 alteraCor: null,
@@ -20,7 +20,7 @@ export default class App extends Component {
         }
     }
 
-    componentWillMount () {
+    componentDidMount () {
         this.handleClickCorpo()
     }
 
@@ -72,30 +72,19 @@ export default class App extends Component {
     render () {
         return (
             <div id="container">
-                <Main focoNoCorpo={this.handleClickHeader}
-                    texto='Header'
-                    settings={{
-                        backgroundColor: this.state.corRealHeader,
-                        height: '10%',
-                        width:'100%',
-                        top: '0%',
-                        zIndex: '1'
-                    }} />
-                <Main settings={{
-                        backgroundColor: this.state.corRealCorpo,
-                        height: '90%',
-                        width:'100%',
-                        top: '10%'
+                    <div id='header' className='componente' style={{
+                        backgroundColor: this.state.corRealHeader
                     }}
-                    focoNoCorpo={this.handleClickCorpo} />
-                <Main settings={{
-                        backgroundColor: this.state.corRealCaixa,
-                        height: '30%',
-                        width:'30%',
-                        top: '35%',
-                        left: '35%'
+                    onClick={this.handleClickHeader}>Header</div>
+                    <div id='corpo' className='componente' style={{
+                        backgroundColor: this.state.corRealCorpo
                     }}
-                    focoNoCorpo={this.handleClickCaixa} />
+                    onClick={this.handleClickCorpo} ></div>
+                    <div id='caixa' className='componente' style={{
+                        backgroundColor: this.state.corRealCaixa
+                    }}
+                    onClick={this.handleClickCaixa} ></div>
+                    <Palheta />
                 <OpcaoCor
                     nome='Caixa de seleção'
                     corReal={this.state.ComponenteFocado.cor}
