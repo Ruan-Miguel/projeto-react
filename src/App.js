@@ -12,7 +12,7 @@ export default class App extends Component {
         this.state = {
             corRealCaixa: '#1976D2',
             corRealHeader: '#76b927',
-            corRealCorpo: 'CDDC39',
+            corRealCorpo: '#CDDC39',
             ComponenteFocado: {
                 cor: '',
                 alteraCor: null,
