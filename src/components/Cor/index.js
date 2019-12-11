@@ -4,7 +4,7 @@ import './styles.css'
 
 function Cor (props) {
     return (
-        <div className='cor' style={{backgroundColor: props.cor}}>{props.cor}</div>
+        <div className='cor' onClick={() => props.changeColor(props.cor)} style={{backgroundColor: props.cor}}>{props.cor}</div>
     )
 }
 

@@ -84,7 +84,7 @@ export default class App extends Component {
                         backgroundColor: this.state.corRealCaixa
                     }}
                     onClick={this.handleClickCaixa} ></div>
-                    <Palheta />
+                    <Palheta changeColor={this.state.ComponenteFocado.alteraCor} />
                 <OpcaoCor
                     nome='Caixa de seleção'
                     corReal={this.state.ComponenteFocado.cor}

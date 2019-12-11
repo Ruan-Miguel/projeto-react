@@ -5,8 +5,7 @@ import './styles.css'
 import Cor from '../Cor'
 
 function Palheta(props) {
-    let teste = ['#E91E63',
-    '#FCE4EC',
+    let teste = ['#FCE4EC',
     '#F8BBD0',
     '#F48FB1',
     '#F06292',
@@ -20,7 +19,6 @@ function Palheta(props) {
     '#FF4081',
     '#F50057',
     '#C51162',
-    '#9C27B0',
     '#F3E5F5',
     '#E1BEE7',
     '#CE93D8',
@@ -35,7 +33,6 @@ function Palheta(props) {
     '#E040FB',
     '#D500F9',
     '#AA00FF',
-    '#673AB7',
     '#EDE7F6',
     '#D1C4E9',
     '#B39DDB',
@@ -50,7 +47,6 @@ function Palheta(props) {
     '#7C4DFF',
     '#651FFF',
     '#6200EA',
-    '#3F51B5',
     '#E8EAF6',
     '#C5CAE9',
     '#9FA8DA',
@@ -65,7 +61,6 @@ function Palheta(props) {
     '#536DFE',
     '#3D5AFE',
     '#304FFE',
-    '#2196F3',
     '#E3F2FD',
     '#BBDEFB',
     '#90CAF9',
@@ -80,7 +75,6 @@ function Palheta(props) {
     '#448AFF',
     '#2979FF',
     '#2962FF',
-    '#03A9F4',
     '#E1F5FE',
     '#B3E5FC',
     '#81D4FA',
@@ -95,7 +89,6 @@ function Palheta(props) {
     '#40C4FF',
     '#00B0FF',
     '#0091EA',
-    '#00BCD4',
     '#E0F7FA',
     '#B2EBF2',
     '#80DEEA',
@@ -110,7 +103,6 @@ function Palheta(props) {
     '#18FFFF',
     '#00E5FF',
     '#00B8D4',
-    '#009688',
     '#E0F2F1',
     '#B2DFDB',
     '#80CBC4',
@@ -125,7 +117,6 @@ function Palheta(props) {
     '#64FFDA',
     '#1DE9B6',
     '#00BFA5',
-    '#4CAF50',
     '#E8F5E9',
     '#C8E6C9',
     '#A5D6A7',
@@ -140,7 +131,6 @@ function Palheta(props) {
     '#69F0AE',
     '#00E676',
     '#00C853',
-    '#8BC34A',
     '#F1F8E9',
     '#DCEDC8',
     '#C5E1A5',
@@ -155,7 +145,6 @@ function Palheta(props) {
     '#B2FF59',
     '#76FF03',
     '#64DD17',
-    '#CDDC39',
     '#F9FBE7',
     '#F0F4C3',
     '#E6EE9C',
@@ -170,7 +159,6 @@ function Palheta(props) {
     '#EEFF41',
     '#C6FF00',
     '#AEEA00',
-    '#FFEB3B',
     '#FFFDE7',
     '#FFF9C4',
     '#FFF59D',
@@ -185,7 +173,6 @@ function Palheta(props) {
     '#FFFF00',
     '#FFEA00',
     '#FFD600',
-    '#FFC107',
     '#FFF8E1',
     '#FFECB3',
     '#FFE082',
@@ -200,7 +187,6 @@ function Palheta(props) {
     '#FFD740',
     '#FFC400',
     '#FFAB00',
-    '#FF9800',
     '#FFF3E0',
     '#FFE0B2',
     '#FFCC80',
@@ -215,7 +201,6 @@ function Palheta(props) {
     '#FFAB40',
     '#FF9100',
     '#FF6D00',
-    '#FF5722',
     '#FBE9E7',
     '#FFCCBC',
     '#FFAB91',
@@ -230,7 +215,6 @@ function Palheta(props) {
     '#FF6E40',
     '#FF3D00',
     '#DD2C00',
-    '#795548',
     '#EFEBE9',
     '#D7CCC8',
     '#BCAAA4',
@@ -242,9 +226,10 @@ function Palheta(props) {
     '#4E342E',
     '#3E2723'
     ]
+    
     return (
         <div className='palheta'>
-            {teste.map(element => <Cor key={element} cor={element} />)}
+            {teste.map(element => <Cor changeColor={props.changeColor} key={element} cor={element} />)}
         </div>
     )
 }
