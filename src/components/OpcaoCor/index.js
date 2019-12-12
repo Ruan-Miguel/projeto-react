@@ -13,14 +13,14 @@ export default class Main extends Component {
 
     componentDidMount () {
         this.setState({
-            corInformada: this.props.corReal
+            corInformada: this.props.componenteFocado.cor
         })
     }
 
     componentDidUpdate (prevProps) {
         if (prevProps !== this.props) {
             this.setState({
-                corInformada: this.props.corReal
+                corInformada: this.props.componenteFocado.cor
             })
         }
     }
@@ -39,7 +39,7 @@ export default class Main extends Component {
             })
 
             if (validade) {
-                this.props.changeColor(this.state.corInformada)
+                this.props.componenteFocado.alteraCor(this.state.corInformada)
             }
         }
     }

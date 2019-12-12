@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import './styles.css'
 
+import Bloco from './components/Bloco'
 import Palheta from './components/Palheta'
 import OpcaoCor from './components/OpcaoCor'
 
@@ -13,7 +14,7 @@ export default class App extends Component {
             corRealCaixa: '#1976D2',
             corRealHeader: '#76b927',
             corRealCorpo: '#CDDC39',
-            ComponenteFocado: {
+            componenteFocado: {
                 cor: '',
                 alteraCor: null,
             },
@@ -26,25 +27,37 @@ export default class App extends Component {
 
     mudaCorCaixa = (cor) => {
         this.setState({
-            corRealCaixa: cor
+            corRealCaixa: cor,
+            componenteFocado: {
+                cor: cor,
+                alteraCor: this.state.componenteFocado.alteraCor
+            }
         })
     }
 
     mudaCorHeader = (cor) => {
         this.setState({
-            corRealHeader: cor
+            corRealHeader: cor,
+            componenteFocado: {
+                cor: cor,
+                alteraCor: this.state.componenteFocado.alteraCor
+            }
         })
     }
 
     mudaCorCorpo = (cor) => {
         this.setState({
-            corRealCorpo: cor
+            corRealCorpo: cor,
+            componenteFocado: {
+                cor: cor,
+                alteraCor: this.state.componenteFocado.alteraCor
+            }
         })
     }
 
     handleClickCaixa = () => {
         this.setState({
-            ComponenteFocado: {
+            componenteFocado: {
                 cor: this.state.corRealCaixa,
                 alteraCor: this.mudaCorCaixa
             }
@@ -53,7 +66,7 @@ export default class App extends Component {
 
     handleClickHeader = () => {
         this.setState({
-            ComponenteFocado: {
+            componenteFocado: {
                 cor: this.state.corRealHeader,
                 alteraCor: this.mudaCorHeader
             }
@@ -62,7 +75,7 @@ export default class App extends Component {
 
     handleClickCorpo = () => {
         this.setState({
-            ComponenteFocado: {
+            componenteFocado: {
                 cor: this.state.corRealCorpo,
                 alteraCor: this.mudaCorCorpo
             }
@@ -72,23 +85,34 @@ export default class App extends Component {
     render () {
         return (
             <div id="container">
-                    <div id='header' className='componente' style={{
-                        backgroundColor: this.state.corRealHeader
+                    <Bloco estilo={{
+                        height: '10%',
+                        width: '100%',
+                        top: '0%',
+                        zIndex: '1',
                     }}
-                    onClick={this.handleClickHeader}>Header</div>
-                    <div id='corpo' className='componente' style={{
-                        backgroundColor: this.state.corRealCorpo
+                    cor={this.state.corRealHeader} 
+                    handleClick={this.handleClickHeader}
+                    texto='Header' />
+                    <Bloco estilo={{
+                        height: '90%',
+                        width: '100%',
+                        top: '10%',
+                    }} 
+                    cor={this.state.corRealCorpo}
+                    handleClick={this.handleClickCorpo} />
+                    <Bloco estilo={{
+                        height: '30%',
+                        width: '30%',
+                        top: '35%',
+                        left: '35%',
                     }}
-                    onClick={this.handleClickCorpo} ></div>
-                    <div id='caixa' className='componente' style={{
-                        backgroundColor: this.state.corRealCaixa
-                    }}
-                    onClick={this.handleClickCaixa} ></div>
-                    <Palheta changeColor={this.state.ComponenteFocado.alteraCor} />
+                    cor={this.state.corRealCaixa}
+                    handleClick={this.handleClickCaixa} />
+                    <Palheta changeColor={this.state.componenteFocado.alteraCor} />
                 <OpcaoCor
                     nome='Caixa de seleção'
-                    corReal={this.state.ComponenteFocado.cor}
-                    changeColor={this.state.ComponenteFocado.alteraCor} />
+                    componenteFocado={this.state.componenteFocado} />
             </div> 
         )
     }
