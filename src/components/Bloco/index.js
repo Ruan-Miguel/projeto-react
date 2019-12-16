@@ -9,16 +9,17 @@ export default class Bloco extends Component {
         if (prevProps.cor !== this.props.cor) {
             const animacao = keyframes`{
                 0% {background: radial-gradient(circle, ${prevProps.cor} 0%, ${this.props.cor} 0%)}
-                25% {background: radial-gradient(circle, ${prevProps.cor} 25%, ${this.props.cor} 0%)}
-                50% {background: radial-gradient(circle, ${prevProps.cor} 50%, ${this.props.cor} 0%)}
-                75% {background: radial-gradient(circle, ${prevProps.cor} 75%, ${this.props.cor} 0%)}
+                20% {background: radial-gradient(circle, ${prevProps.cor} 20%, ${this.props.cor} 0%)}
+                40 {background: radial-gradient(circle, ${prevProps.cor} 40%, ${this.props.cor} 0%)}
+                60% {background: radial-gradient(circle, ${prevProps.cor} 60%, ${this.props.cor} 0%)}
+                80% {background: radial-gradient(circle, ${prevProps.cor} 80%, ${this.props.cor} 0%)}
                 100% {background: radial-gradient(circle, ${prevProps.cor} 100%, ${this.props.cor} 0%)}
             }
             `
 
             this.Div = styled.div`
             background: ${this.props.cor};
-            animation: ${animacao} 200ms forwards;
+            animation: ${animacao} 180ms forwards;
             `
             
         }

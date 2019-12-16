@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import './styles.css'
 
 import Bloco from './components/Bloco'
-import Palheta from './components/Palheta'
+import ContainerPalheta from './components/ContainerPalheta'
 import OpcaoCor from './components/OpcaoCor'
 
 export default class App extends Component {
@@ -109,7 +109,7 @@ export default class App extends Component {
                     }}
                     cor={this.state.corRealCaixa}
                     handleClick={this.handleClickCaixa} />
-                    <Palheta changeColor={this.state.componenteFocado.alteraCor} />
+                    <ContainerPalheta changeColor={this.state.componenteFocado.alteraCor} />
                 <OpcaoCor
                     nome='Caixa de seleção'
                     componenteFocado={this.state.componenteFocado} />

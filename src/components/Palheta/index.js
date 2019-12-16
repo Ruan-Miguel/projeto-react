@@ -226,10 +226,10 @@ function Palheta(props) {
     '#4E342E',
     '#3E2723'
     ]
-    
+
     return (
         <div className='palheta'>
-            {teste.map(element => <Cor changeColor={props.changeColor} key={element} cor={element} />)}
+        {teste.map(element => <Cor changeColor={props.changeColor} key={element} cor={element} />)}
         </div>
     )
 }

@@ -23,3 +23,10 @@ html, body, #container {
     align-items: center;
     flex-direction: column;
 }
+
+.btnAplicar {
+    padding: 1% 2% 1% 2%;
+    border-radius: 3px;
+    background-color: #5E35B1;
+    cursor: pointer;
+}
